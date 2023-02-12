@@ -32,11 +32,11 @@ class bible_class:
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
 #Our sentences we like to encode
-with open('searchy/bsb2.txt', 'r') as file:
+with open('bsb2.txt', 'r') as file:
     bible_v = file.readlines()
     print(len(bible_v), 'lines in bsb2')
 try:
-    embeddings = np.load('searchy/bsb_embeddings.npy')
+    embeddings = np.load('bsb_embeddings.npy')
 except:
     #Sentences are encoded by calling model.encode()
     embeddings = model.encode(bible_v)
